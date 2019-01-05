@@ -1,7 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule }    from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+//import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+
+import { fakeBackendProvider } from './_helpers';
+
+import { AlertComponent } from './_components';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { routing }        from './app.routing';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,26 +19,25 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TopersComponent } from './topers/topers.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
 
-const appRoutes: Routes = [
+// const appRoutes: Routes = [
   
-  {path: 'home' , component: HomeComponent},
-  {path: 'about' , component: AboutUsComponent},
-  {path: 'contact' , component: ContactUsComponent},
-  {path: '10thtoppers' , component: TopersComponent},
+//   {path: 'home' , component: HomeComponent},
+//   {path: 'about' , component: AboutUsComponent},
+//   {path: 'contact' , component: ContactUsComponent},
+//   {path: '10thtoppers' , component: TopersComponent},
 
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+//   { path: '**', redirectTo: 'home' }
 
  
  
  
-];
+// ];
 
 
 @NgModule({
@@ -42,18 +49,28 @@ const appRoutes: Routes = [
     AboutUsComponent,
     ContactUsComponent,
     TopersComponent,
+    LoginComponent,
+    RegisterComponent,
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    ReactiveFormsModule,
+    routing,
+    // RouterModule.forRoot(
+    //   appRoutes,
+    //   { enableTracing: true } // <-- debugging purposes only
+    // )
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
