@@ -21,6 +21,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TopersComponent } from './topers/topers.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AttendanceComponent } from './attendance/attendance.component';
 
 
 
@@ -43,6 +45,7 @@ import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
+    AlertComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
@@ -51,6 +54,8 @@ import { RegisterComponent } from './register/register.component';
     TopersComponent,
     LoginComponent,
     RegisterComponent,
+    AdminHomeComponent,
+    AttendanceComponent,
     
   ],
   imports: [
