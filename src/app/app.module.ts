@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule }    from '@angular/forms';
+import { ReactiveFormsModule, FormsModule }    from '@angular/forms';
 import { NgModule } from '@angular/core';
 //import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -64,6 +64,7 @@ import { AttendanceComponent } from './attendance/attendance.component';
     AppRoutingModule,
     ReactiveFormsModule,
     routing,
+    FormsModule
     // RouterModule.forRoot(
     //   appRoutes,
     //   { enableTracing: true } // <-- debugging purposes only
