@@ -1,0 +1,63 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <div class = "row">
+        <div class = "col-sm-6 offset-sm-3">
+<h2>SMS to PayFees Student</h2>
+<form  [formGroup]="attendanceForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name"> Name</label>
+        <input type="text" formControlName="name"    class="form-control" [(ngModel)]="model.name" id = "name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required"> Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phonenum</label>
+        <input type="text" formControlName="phone" class="form-control" [(ngModel)]="model.phone"  [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.phone.errors.required">Phone is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="totalfees">Total Fees</label>
+        <input type="text" formControlName="totalfees" class="form-control"  [(ngModel)]="model.totalfees" [ngClass]="{ 'is-invalid': submitted && f.totalfees.errors }" />
+        <div *ngIf="submitted && f.totalfees.errors" class="invalid-feedback">
+            <div *ngIf="f.totalfees.errors.required">Total Fees is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="amountpaid">Amount Paid</label>
+        <input type="text" formControlName="amountpaid" class="form-control" [(ngModel)]="model.amountpaid" [ngClass]="{ 'is-invalid': submitted && f.amountpaid.errors }" />
+        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.amountpaid.errors.required">Amount Paid is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="balanceamount">Balance Amount</label>
+        <input type="text" formControlName="balanceamount" class="form-control"  [(ngModel)]="model.balanceamount" [ngClass]="{ 'is-invalid': submitted && f.balanceamount.errors }" />
+        <div *ngIf="submitted && f.balanceamount.errors" class="invalid-feedback">
+            <div *ngIf="f.balanceamount.errors.required">balanceamount is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" formControlName="date" class="form-control"  [(ngModel)]="model.date"  [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+        <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+            <div *ngIf="f.date.errors.required">Date is required</div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" [disabled]="loading"  class="btn btn-primary">Send</button>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+       
+    </div>
+</form>
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>

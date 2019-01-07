@@ -1,14 +1,29 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        <a class="nav-item nav-link" routerLink="attendance">Attendance Absentes</a>
+        <a class="nav-item nav-link" routerLink="payfees">Pay Fee </a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Group SMS
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"  routerLink="/creategroup" >Create Group</a>
+              <a class="dropdown-item"  routerLink="/sendgroupsms" >Send Group sms</a>
+            
+            
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" routerLink="/home"></a>
+            </div>
+          </li>
+       <a class="nav-item nav-link " (click)="logout()" *ngIf="currentUser">Logout</a> 
     </div>
 </nav>
 
 
 
 <app-header></app-header>
-<alert></alert>
+
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 

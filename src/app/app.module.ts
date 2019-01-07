@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
+
 import { fakeBackendProvider } from './_helpers';
 
 import { AlertComponent } from './_components';
@@ -23,6 +24,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AttendanceComponent } from './attendance/attendance.component';
+import { PayfeesComponent } from './payfees/payfees.component';
+import { CreategroupComponent } from './creategroup/creategroup.component';
+import { SendgroupsmsComponent } from './sendgroupsms/sendgroupsms.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 
@@ -56,6 +61,9 @@ import { AttendanceComponent } from './attendance/attendance.component';
     RegisterComponent,
     AdminHomeComponent,
     AttendanceComponent,
+    PayfeesComponent,
+    CreategroupComponent,
+    SendgroupsmsComponent,
     
   ],
   imports: [
@@ -64,7 +72,8 @@ import { AttendanceComponent } from './attendance/attendance.component';
     AppRoutingModule,
     ReactiveFormsModule,
     routing,
-    FormsModule
+    FormsModule,
+    NgMultiSelectDropDownModule
     // RouterModule.forRoot(
     //   appRoutes,
     //   { enableTracing: true } // <-- debugging purposes only
